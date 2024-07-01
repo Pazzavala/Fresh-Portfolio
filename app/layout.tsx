@@ -17,8 +17,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang='en'>
+            {/* Since our header is fixed position it takes it out of layout */}
+            {/* Therefore in our body we can add some padding to top*/}
             <body
-                className={`${inter.className} bg-gray-50 text-gray-950 relative`}
+                className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36`}
             >
                 {/* This is how we create a circle in background */}
                 <div className='bg-[#fbe2e3] absolute -z-10 top-[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem]'></div>
