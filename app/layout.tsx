@@ -16,7 +16,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang='en'>
+        <html lang='en' className='!scroll-smooth'>
             {/* Since our header is fixed position it takes it out of layout */}
             {/* Therefore in our body we can add some padding to top*/}
             <body

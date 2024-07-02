@@ -1,10 +1,12 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { links } from '@/lib/data';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 export default function Heder() {
+    const [activeSection, setActiveSection] = useState('Home');
     return (
         // We must make relative so z index works
         <header className='z-[999] relative'>
@@ -23,17 +25,36 @@ export default function Heder() {
                 <ul className='flex w-22rem flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5'>
                     {links.map((link) => (
                         <motion.li
-                            className='h-3/4 flex items-center justify-center'
+                            className='relative h-3/4 flex items-center justify-center'
                             key={link.hash}
                             initial={{ y: -100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                         >
                             <Link
-                                className='flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition'
+                                className={clsx(
+                                    'flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition',
+                                    {
+                                        'text-gray-950':
+                                            activeSection === link.name,
+                                    }
+                                )}
                                 href={link.hash}
+                                // Can also do a sepeate func like: onCLick={handleClick}
+                                onClick={() => setActiveSection(link.name)}
                             >
-                                {' '}
                                 {link.name}
+                                {link.name === activeSection && (
+                                    <motion.span
+                                        className='absolute bg-gray-100 rounded-full inset-0 -z-10'
+                                        // Framer motion is able to animate this cus it sees all these spans with same layoutid so it removed prev span and animates to next span
+                                        layoutId='activeSection'
+                                        transition={{
+                                            type: 'spring',
+                                            stiffness: 380,
+                                            damping: 30,
+                                        }}
+                                    ></motion.span>
+                                )}
                             </Link>
                         </motion.li>
                     ))}
