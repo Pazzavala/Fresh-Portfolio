@@ -1,12 +1,19 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { links } from '@/lib/data';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 export default function Heder() {
-    const [activeSection, setActiveSection] = useState('Home');
+    // Another hook in react this is to consume a context but we get error bc we must handle null
+    // const { activeSection, setActiveSection } =
+    //     useContext(ActiveSectionContext);
+
+    // So we made our own custome context hook
+    const { activeSection, setActiveSection } = useActiveSectionContext();
+
     return (
         // We must make relative so z index works
         <header className='z-[999] relative'>
