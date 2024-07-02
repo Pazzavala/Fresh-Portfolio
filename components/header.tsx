@@ -12,7 +12,8 @@ export default function Heder() {
     //     useContext(ActiveSectionContext);
 
     // So we made our own custome context hook
-    const { activeSection, setActiveSection } = useActiveSectionContext();
+    const { activeSection, setActiveSection, setTimeOfLastClick } =
+        useActiveSectionContext();
 
     return (
         // We must make relative so z index works
@@ -47,7 +48,10 @@ export default function Heder() {
                                 )}
                                 href={link.hash}
                                 // Can also do a sepeate func like: onCLick={handleClick}
-                                onClick={() => setActiveSection(link.name)}
+                                onClick={() => {
+                                    setActiveSection(link.name);
+                                    setTimeOfLastClick(Date.now());
+                                }}
                             >
                                 {link.name}
                                 {link.name === activeSection && (

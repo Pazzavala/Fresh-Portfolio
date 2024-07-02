@@ -31,7 +31,7 @@ export default function Project({
             style={{ scale: scaleProgress, opacity: opacityProgress }}
             className='group mb-3 sm:mb-8 last:mb-0'
         >
-            <article className='relative bg-gray-100 max-w-[45rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 sm:h-[20rem]  group-evesn:pl-8 hover:bg-gray-200 transition'>
+            <article className='relative bg-gray-100 max-w-[45rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 sm:h-[20rem] group-even:pl-8 hover:bg-gray-200 transition'>
                 <div className='flex flex-col h-full px-5 pt-4 pb-7 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] group-even:ml-[18rem] '>
                     <h3 className='text-2xl font-semibold'>{title}</h3>
                     <p className='mt-2 leading-relaxed text-gray-700'>
