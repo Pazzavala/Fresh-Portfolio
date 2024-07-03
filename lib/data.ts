@@ -39,7 +39,8 @@ export const experiencesData = [
     location: "Miami, FL",
     description:
       "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
+    // we use this syntax b/c its not a tsx component in which we could use <LuGraduationCap/>
+      icon: React.createElement(LuGraduationCap),
     date: "2019",
   },
   {
