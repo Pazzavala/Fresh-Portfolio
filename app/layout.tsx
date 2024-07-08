@@ -1,17 +1,18 @@
+import Header from '@/components/header';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
 import ActiveSectionContextProvider from '@/context/active-section-context';
+import Footer from '@/components/footer';
 import { Toaster } from 'react-hot-toast';
-import ThemeScitch from '@/components/theme-switch';
 import ThemeContextProvoider from '@/context/theme-context';
+import ThemeScitch from '@/components/theme-switch';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-    title: 'Ricardos Fresh Portfolio',
-    description: 'Ricardo is a full-stack developer with 8 years of ex.',
+    title: 'Ricardo | Personal Portfolio',
+    description:
+        'Ricardo is a full-stack developer with 8 years of experience.',
 };
 
 export default function RootLayout({
@@ -24,11 +25,11 @@ export default function RootLayout({
             {/* Since our header is fixed position it takes it out of layout */}
             {/* Therefore in our body we can add some padding to top*/}
             <body
-                className={`bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+                className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
             >
                 {/* This is how we create a circle in background */}
-                <div className='bg-[#fbe2e3] absolute -z-10 top-[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]'></div>
-                <div className='bg-[#dbd7fb] absolute -z-10 top-[-1rem] left-[-35rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]'></div>
+                <div className='bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]'></div>
+                <div className='bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]'></div>
 
                 <ThemeContextProvoider>
                     <ActiveSectionContextProvider>

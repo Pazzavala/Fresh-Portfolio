@@ -3,7 +3,7 @@
 import React from 'react';
 import { skillsData } from '@/lib/data';
 import { useSectionInView } from '@/lib/hooks';
-import SectionHeading from './section-headings';
+import SectionHeading from './section-heading';
 import { animate, motion } from 'framer-motion';
 
 const fadeInAnimationVariants = {

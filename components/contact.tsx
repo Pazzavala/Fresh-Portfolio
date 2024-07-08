@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useSectionInView } from '@/lib/hooks';
-import SectionHeading from './section-headings';
+import SectionHeading from './section-heading';
 import { motion } from 'framer-motion';
 import { sendEmail } from '@/actions/sendEmail';
 import SubmitBtn from './submit-btn';

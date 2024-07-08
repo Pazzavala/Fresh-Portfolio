@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import SectionHeading from './section-headings';
+import SectionHeading from './section-heading';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
 
@@ -11,14 +11,14 @@ export default function About() {
     return (
         <motion.section
             ref={ref}
-            id='about'
-            className='mb-28 max-w-[45rem] text-center leading-8 sm:mb-0 scroll-mt-28'
+            className='mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.175 }}
+            id='about'
         >
             {/* The text about me is a prop that will be sent to component */}
-            <SectionHeading>About Me</SectionHeading>
+            <SectionHeading>About me</SectionHeading>
             <p className='mb-3'>
                 After graduating with a degree in{' '}
                 <span className='font-medium'>Accounting</span>, I decided to
@@ -37,6 +37,7 @@ export default function About() {
                 <span className='font-medium'>full-time position</span> as a
                 software developer.
             </p>
+
             <p>
                 <span className='italic'>When I'm not coding</span>, I enjoy
                 playing video games, watching movies, and playing with my dog. I
